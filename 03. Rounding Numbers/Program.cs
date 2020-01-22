@@ -1,0 +1,21 @@
+﻿using System;
+using System.Linq;
+
+namespace _03._Rounding_Numbers
+{
+    class Program
+    {
+        static void Main()
+        {
+            string input = Console.ReadLine();
+
+            double[] numbers = input.Split().Select(double.Parse).ToArray();
+            
+            foreach (double number in numbers)
+            {
+                int rounded = (int)Math.Round(number, MidpointRounding.AwayFromZero);
+                Console.WriteLine("{0} => {1}", number, rounded);
+            }
+        }
+    }
+}
